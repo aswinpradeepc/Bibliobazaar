@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Signup Section Begin -->
+    <section class="checkout spad">
+        <div class="container sign_up_div">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__form__title">
+                        <h2>Sign Up</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="sign_up_form">
+                <form action="/signup/?{{ request.META.QUERY_STRING }}" method="POST">
+
+
+                    <figure class="text-center "><h2 style="color: #000000 ;" class="fw-bold">Register </h2>
+                        <p> Please enter you details to register </p>
+                    </figure>
+
+                    <div class="input-fields ">
+                        {% csrf_token %}
+                        {% if pswderr %}
+                            <div class=" text-center text-danger flex-column  align-items-center" role="alert">
+                                <i class="fa fa-exclamation-circle"></i> {{ pswderr }}
+                            </div>
+                        {% endif %}
+
+                        <div class=" mb-3 d-flex flex-column  align-items-center ">
+                            <div class="mb-2 d-flex flex-column "
+                                 style="width:350px;margin-right: auto;margin-left: auto ">
+                                <label class="form-label input-label " for="username">Your fullname* </label>
+                                <input name="username" type="text" id="username" placeholder="Enter user name"
+                                       class="form-control  form-control-lg text-input mb-2" required
+                                       style=" height:70px"/>
+                                <label class="form-label input-label " for="email">Email address* </label>
+                                <input name="email" type="email" id="email" placeholder="Enter Email address"
+                                       class="form-control  form-control-lg text-input mb-2" required
+                                       style=" height:70px"/>
+                                <label class="form-label input-label " for="password">Create password*</label>
+                                <div class="password-container">
+                                    <input type="password" name="password" id="password" placeholder="Enter password"
+                                           class="form-control form-control-lg text-input mb-2 password-input"
+                                           style=" height:70px " required/>
+
+                                </div>
+                                <label class="form-label input-label " for="password-retype">Confirm password*</label>
+                                <div class="password-container">
+                                    <input type="password" name="password retype" id="password-retype"
+                                           placeholder="Enter password"
+                                           class="form-control form-control-lg text-input mb-2 password-input"
+                                           style=" height:70px " required>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="site-btn">Register Account</button>
+                        </div>
+
+                        <div class="already-container">
+                            <p class="already"> Already have an account? <a class="signin-link"
+                                                                            href="/login?{{ request.META.QUERY_STRING }}">Sign
+                                in</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Signup Section End -->
+{% endblock %}

@@ -1,0 +1,463 @@
+{% extends "header_base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hero__categories">
+                    <div class="hero__categories__all">
+                        <i class="fa fa-bars"></i>
+                        <span>All departments</span>
+                    </div>
+                    <ul>
+                        <li><a href="#">Exams</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Novels</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Stationary</a></li>
+                        <li><a href="#">International Bestsellers</a></li>
+                        <li><a href="#">Award Winning</a></li>
+                        <li><a href="#">Featured Authors</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Health Care</a></li>
+                        <li><a href="#">Business</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="hero__search">
+                    <div class="hero__search__form">
+                        <form action="#">
+                            <div class="hero__search__categories">
+                                All Categories
+                                <span class="arrow_carrot-down"></span>
+                            </div>
+                            <input type="text" placeholder="What do you need?">
+                            <button type="submit" class="site-btn">SEARCH</button>
+                        </form>
+                    </div>
+                    <div class="hero__search__phone">
+                        <div class="hero__search__phone__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="hero__search__phone__text">
+                            <h5>+91 0000 665243</h5>
+                            <span>support 24/7 time</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__item set-bg" data-setbg="{% static "img/hero/banner.jpg" %}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Categories Section Begin -->
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="categories__slider owl-carousel">
+                <div class="col-lg-3">
+                    <div class="categories__item set-bg" data-setbg="{% static "img/categories/cat-1.jpg" %}">
+                        <h5><a href="#">Children</a></h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="categories__item set-bg" data-setbg="{% static "img/categories/cat-2.jpg" %}">
+                        <h5><a href="#">Exams</a></h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="categories__item set-bg" data-setbg="{% static "img/categories/cat-3.jpg" %}">
+                        <h5><a href="#">New Arrivals</a></h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="categories__item set-bg" data-setbg="{% static "img/categories/cat-4.jpg" %}">
+                        <h5><a href="#">Novels</a></h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="categories__item set-bg" data-setbg="{% static "img/categories/cat-5.jpg" %}">
+                        <h5><a href="#">Academics</a></h5>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="categories__item set-bg" data-setbg="{% static "img/categories/used_books.jpeg" %}">
+                        <h5><a href="#">Used Books</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Categories Section End -->
+
+<!-- Featured Section Begin -->
+<section class="featured spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Featured Product</h2>
+                </div>
+                <div class="featured__controls">
+                    <ul>
+                        <li class="active" data-filter="*">All</li>
+                        <li data-filter=".oranges">UPSC</li>
+                        <li data-filter=".fresh-meat">JEE</li>
+                        <li data-filter=".vegetables">NEET</li>
+                        <li data-filter=".fastfood">EXAMS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row featured__filter">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">UPSC EPF</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">IAS Prelims</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Indian Polity</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">UPSC CSAT</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-5.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Champion's Reasoning</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-6.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Banking & Static Awareness</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-7.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">CUET 23</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+                <div class="featured__item">
+                    <div class="featured__item__pic set-bg" data-setbg="img/featured/feature-8.jpg">
+                        <ul class="featured__item__pic__hover">
+                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="featured__item__text">
+                        <h6><a href="#">Mathematics JEE</a></h6>
+                        <h5>₹499</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured Section End -->
+
+<!-- Banner Begin -->
+<div class="banner">
+    <div class="col-lg-12 col-md-12 col-sm-12" style="justify-content: center; display: flex;">
+        <div class="banner__pic">
+            <img src="{% static "/img/banner/banner-2.jpg" %}" alt="">
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
+
+<!-- Latest Product Section Begin -->
+<section class="latest-product spad" style="margin-bottom: 10rem;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Latest Products</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        <div class="latest-prdouct__slider__item">
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_1.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The power of your subconscious mind</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_2.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>the room on the roof </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_3.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>the room on the roof </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="latest-prdouct__slider__item">
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_4.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The power of your subconscious mind</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_5.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The power of your subconscious mind</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_6.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>the room on the roof </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Top Rated Products</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        <div class="latest-prdouct__slider__item">
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_5.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>Crab </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_6.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6> physics wallah aspire for neet </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_2.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>the room on the roof </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="latest-prdouct__slider__item">
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_1.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6> physics wallah aspire for neet </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_3.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The power of your subconscious mind</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_2.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The dairy of a young girl</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="latest-product__text">
+                    <h4>Review Products</h4>
+                    <div class="latest-product__slider owl-carousel">
+                        <div class="latest-prdouct__slider__item">
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_4.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The dairy of a young girl</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_2.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>the room on the roof </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_1.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The power of your subconscious mind</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="latest-prdouct__slider__item">
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_6.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The sense of an ending </h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_5.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The dairy of a young girl</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                            <a href="#" class="latest-product__item">
+                                <div class="latest-product__item__pic">
+                                    <img src="/img/latest-product/lp_2.jpg" alt="">
+                                </div>
+                                <div class="latest-product__item__text">
+                                    <h6>The dairy of a young girl</h6>
+                                    <span>₹499</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Latest Product Section End -->
+
+{% endblock %}

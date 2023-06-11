@@ -1,0 +1,28 @@
+# Ignore virtual environment files
+venv/
+env/
+*.venv/
+
+# Ignore Django development server
+*.log
+
+# Ignore database files
+db.sqlite3
+
+# Ignore static files
+staticfiles/
+
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore secret and sensitive information
+.env
+
+# Ignore IDE-specific files
+*.pyc
+
+# Ignore dependency files
+pip-lock.txt
+

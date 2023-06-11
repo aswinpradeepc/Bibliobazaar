@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="contact-form spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__form__title">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+            </div>
+            {% if pswderr %}
+                <div class="alert alert-danger" role="alert">
+                    {{ pswderr }}
+                </div>
+            {% endif %}
+            <form action="{% url 'login' %}{% if request.GET.next %}?next={{ request.GET.next }}{% else %}?next=/{% endif %}""
+{#            <form action="/login/?{{ request.META.QUERY_STRING }}"#}
+                  method="POST">
+                {% csrf_token %}
+
+                <div class=" mb-4 d-flex flex-column  align-items-center ">
+                    <div class="mb-4 d-flex flex-column " style="width:350px;margin-right: auto;margin-left: auto ">
+                        <label class="form-label input-label " for="email">Email or username * </label>
+                        <input name="email" type="text" id="email" placeholder="Enter email or username"
+                               class="form-control  form-control-lg text-input mb-4" required style=" height:70px"/>
+                        <label class="form-label input-label " for="password">Password*</label>
+                        <div class="password-container">
+                            <input type="password" name="password" id="password" placeholder="Enter password"
+                                   class="form-control form-control-lg text-input password-input"
+                                   style=" height:70px " required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <button type="submit" class="site-btn">Login</button>
+                </div>
+            </form>
+
+            <div class="already-container">
+                <p class="already">New around here?  <a class="signin-link"
+                                                                href="/signup?{{ request.META.QUERY_STRING }}">Sign
+                    Up</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

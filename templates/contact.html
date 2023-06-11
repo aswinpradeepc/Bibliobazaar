@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static "img/breadcrumb.jpg" %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Contact Us</h2>
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Contact Us</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_phone"></span>
+                        <h4>Phone</h4>
+                        <p>+91 8888-6868</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_clock_alt"></span>
+                        <h4>Open time</h4>
+                        <p>We are online always!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-6 text-center">
+                    <div class="contact__widget">
+                        <span class="icon_mail_alt"></span>
+                        <h4>Email</h4>
+                        <p>hello@bibliobazaar.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+
+    <!-- Contact Form Begin -->
+    <div class="contact-form spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__form__title">
+                        <h2>Request a Book</h2>
+                    </div>
+                </div>
+            </div>
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <h1 style="text-align: center"  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </h1><br><br>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="POST">{% csrf_token %}
+                {{ form.as_p }}
+               <input style="color: white" class="site-btn" type="submit"> </input>
+            </form>
+        </div>
+    </div>
+    <!-- Contact Form End -->
+
+{% endblock %}
+
+
+
+{# <form action="#" method="POST">{% csrf_token %}#}
+{#            <div class="row">#}
+{#                <div class="col-lg-6 col-md-6">#}
+{#                    <input type="text" placeholder="Name of the book">#}
+{#                </div>#}
+{#                <div class="col-lg-6 col-md-6">#}
+{#                    <input type="text" placeholder="Your Email">#}
+{#                </div>#}
+{#                <div class="col-lg-6 col-md-6">#}
+{#                    <input type="text" placeholder="Name of Author">#}
+{#                </div>#}
+{#                <div class="col-lg-6 col-md-6">#}
+{#                    <input type="text" placeholder="Publisher">#}
+{#                </div>#}
+{#                <div class="col-lg-12 text-center">#}
+{#                    <textarea placeholder="Messages, if any"></textarea>#}
+{#                    <button type="submit" class="site-btn">Request Book</button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </form>#}
