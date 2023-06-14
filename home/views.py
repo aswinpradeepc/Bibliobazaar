@@ -32,14 +32,6 @@ def login_view(request):
     return render(request, 'auth_login/login.html', context)
 
 
-def shop_details_view(request):
-    # Create a context dictionary with any data you want to pass to the template
-    context = {
-
-    }
-
-    # Render the template with the given context
-    return render(request, 'shop-details.html', context)
 
 
 def shopping_cart_view(request):

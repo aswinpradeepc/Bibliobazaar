@@ -1,15 +1,13 @@
 from django import forms
-from .models import Book
+from .models import resell_book
 
-
-class BookRequestForm(forms.ModelForm):
+class ResellRequestForm(forms.ModelForm):
     class Meta:
-        model = Book
-        fields = ['title', 'author', 'publisher', 'email', 'message']
+        model = resell_book
+        fields = ['title', 'author', 'publisher', 'message', 'cover_image']
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Name of the book'}),
             'author': forms.TextInput(attrs={'placeholder': 'Name of Author'}),
             'publisher': forms.TextInput(attrs={'placeholder': 'Publisher'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Your Email'}),
             'message': forms.Textarea(attrs={'placeholder': 'Messages, if any'}),
         }

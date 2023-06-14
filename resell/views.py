@@ -1,22 +1,22 @@
 from django.shortcuts import render
-from .forms import BookRequestForm
+from .forms import ResellRequestForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
 @login_required()
-def contact_view(request):
+def resell_view(request):
     if request.method == 'POST':
-        form = BookRequestForm(request.POST or None)
+        form = ResellRequestForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.user = request.user
             form.save()
             messages.success(request, 'Form submission successful 👍')
-            form = BookRequestForm()
+            form = ResellRequestForm()
     else:
-        form = BookRequestForm()
+        form = ResellRequestForm()
 
     context = {'form': form}
-    return render(request, 'contact.html', context)
+    return render(request, 'resell.html', context)
 
 

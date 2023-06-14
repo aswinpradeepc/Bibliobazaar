@@ -7,7 +7,6 @@ urlpatterns = [
     path('', home_view),
     path('signup', signup_view),
     path('login', login_view),
-    path('shop-details', shop_details_view),
     path('shopping-cart', shopping_cart_view),
     path('shopping-cart', shopping_cart_view),
     path('checkout', checkout_view),

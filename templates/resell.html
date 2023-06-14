@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static "img/breadcrumb.jpg" %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Resell A Book</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/">Home</a>
+                            <span>Resell</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+
+    <!-- Contact Form Begin -->
+    <div class="contact-form spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact__form__title">
+                        <h2>Resell a Book</h2>
+                    </div>
+                </div>
+            </div>
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <h1 style="text-align: center"  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </h1><br><br>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+               <button style="color: white" class="site-btn" type="submit"> Submit </button>
+            </form>
+        </div>
+    </div>
+    <!-- Contact Form End -->
+
+{% endblock %}
+
+

@@ -7,6 +7,7 @@ class BookForSale(models.Model):
     offer = models.BooleanField(default=False)
     used = models.BooleanField(default=False)
     price = models.DecimalField(max_digits=8, decimal_places=2)
+    description = models.TextField(default='No description provided')
 
     def __str__(self):
         return self.title

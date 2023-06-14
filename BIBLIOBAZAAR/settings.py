@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'book_shop',
     'contact',
     'home',
+    'resell',
 ]
 
 MIDDLEWARE = [
