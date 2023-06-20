@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.db.models import Count
+from django.shortcuts import render, get_object_or_404
+from django.http import Http404
+
 
 # Create your views here.
 from .models import BookForSale
@@ -13,10 +14,10 @@ def shop_grid_view(request):
     return render(request, 'shop-grid.html',
                   {'books': books, 'offer_books': offer_books, 'count': count, 'used_books': used_books})
 
-
-def shop_details_view(request):
-    # Create a context dictionary with any data you want to pass to the template
-    context = {}
-
-    # Render the template with the given context
-    return render(request, 'shop-details.html', context)
+def shop_details_view(request, id):
+    try:
+        obj = get_object_or_404(BookForSale, id=id)
+        context = {'obj': obj}
+        return render(request, 'shop-details.html', context)
+    except BookForSale.DoesNotExist:
+        raise Http404("BookForSale does not exist")

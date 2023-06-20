@@ -12,7 +12,6 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 
 logger = logging.getLogger('auth')
 
-
 @ensure_csrf_cookie
 def signin(request):
     context1 = {}
@@ -75,11 +74,14 @@ def signup(request):
 
     return render(request, template_name="auth_login/signup.html", context=context1)
 
+
 logger.info
+
 
 @login_required
 def profile_view(request):
     return render(request, template_name='auth_login/profile.html')
+
 
 @login_required
 def log_out(request):
