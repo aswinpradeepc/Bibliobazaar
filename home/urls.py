@@ -8,6 +8,6 @@ urlpatterns = [
     path('signup', signup_view),
     path('login', login_view),
     path('shopping-cart', shopping_cart_view),
-    path('shopping-cart', shopping_cart_view),
     path('checkout', checkout_view),
+    path('departments/<str:dept>', department_view, name='departments'),
 ]

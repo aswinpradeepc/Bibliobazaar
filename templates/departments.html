@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static "img/breadcrumb.jpg" %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>{{ dept }}</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/">Home</a>
+                            <span>Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                            <div class="filter__item">
+                    <div class="row">
+                        <div class="section-title product__discount__title">
+                            <h2>{{ id }}</h2>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="filter__found">
+                                <h6><span>{{ count }}</span> Products found</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for book in obj %}
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <a href="{% url 'shop-details' book.id %}">
+                                    <div class="product__item__pic set-bg"
+                                         data-setbg="{{ book.image.url }}">
+                                    </div>
+                                </a>
+                                <div class="product__item__text">
+                                    <h6><a href="#">{{ book.title }}</a></h6>
+                                    <h5>{{ book.price }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+{% endblock %}
