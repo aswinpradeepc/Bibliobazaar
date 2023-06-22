@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import BookForSale
+from .models import *
 
 # Register your models here.
 
 admin.site.register(BookForSale)
-
+admin.site.register(Order)

@@ -28,51 +28,33 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
-                            <img class="product__details__pic__item--large"
-                                 src="{{ obj.image.url }}" alt="">
+                            <img class="product__details__pic__item--large" src="{{ obj.image.url }}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                 src="{{ obj.preview_1.url }}" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                 src="{{ obj.preview_2.url }}" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                 src="{{ obj.preview_3.url }}" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                 src="{{ obj.image.url }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="product__details__text">
-                            <h3>{{ obj.title }}</h3>
-{#                            <div class="product__details__rating">#}
-{#                                <i class="fa fa-star"></i>#}
-{#                                <i class="fa fa-star"></i>#}
-{#                                <i class="fa fa-star"></i>#}
-{#                                <i class="fa fa-star"></i>#}
-{#                                <i class="fa fa-star-half-o"></i>#}
-{#                                <span>(18 reviews)</span>#}
-{#                            </div>#}
-                            <div class="product__details__price">₹{{ obj.price }}</div>
-                            <p>{{ obj.description }}</p>
-                            <div class="product__details__quantity">
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" class="primary-btn">ADD TO CART</a>
-                            <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
-                            <ul>
-                                <li><b>Availability</b> <span>In Stock</span></li>
-                                <li><b>Shipping</b> <span>Free shipping on orders above  ₹499</span></li>
-                            </ul>
+                            <img data-imgbigurl="img/product/details/product-details-2.jpg" src="{{ obj.preview_1.url }}" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-3.jpg" src="{{ obj.preview_2.url }}" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-3.jpg" src="{{ obj.preview_3.url }}" alt="">
+                            <img data-imgbigurl="img/product/details/product-details-3.jpg" src="{{ obj.image.url }}" alt="">
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>{{ obj.title }}</h3>
+                        <div class="product__details__price">₹{{ obj.price }}</div>
+                        <p>{{ obj.description }}</p>
+                        <form action="{% url 'add_to_cart' obj.id %}" method="POST">
+                            {% csrf_token %}
+                            <button class="primary-btn" type="submit">Add to Cart</button>
+                        </form>
+                        <ul>
+                            <li><b>Availability</b> <span>In Stock</span></li>
+                            <li><b>Shipping</b> <span>Free shipping on orders above ₹499</span></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
     <!-- Product Details Section End -->
 

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -16,3 +17,27 @@ class BookForSale(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Cart(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    book = models.ForeignKey(BookForSale, on_delete=models.CASCADE)
+
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
+    city = models.CharField(max_length=100)
+    postcode = models.CharField(max_length=10)
+    phone = models.CharField(max_length=15)
+    notes = models.TextField(blank=True)
+    total_price = models.DecimalField(max_digits=8, decimal_places=2)
+
+    def __str__(self):
+        return f"Order {self.pk} - {self.user.username}"
