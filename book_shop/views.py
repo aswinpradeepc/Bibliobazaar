@@ -2,7 +2,12 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import Http404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 import time
+
+from django.views.decorators.csrf import ensure_csrf_cookie
+
+from payment.views import razorpay_client
 from .forms import *
 # Create your views here.
 from .models import *
@@ -81,7 +86,7 @@ def remove_from_cart(request, cart_item_id):
     return redirect('/shopping-cart')
 
 
-@login_required
+@login_required(redirect_field_name="/login/")
 def checkout_view(request):
     try:
         cart = Cart.objects.get(user=request.user)
@@ -90,7 +95,7 @@ def checkout_view(request):
 
     cart_items = cart.cartitem_set.all() if cart else []
     total_price = sum(item.book.price for item in cart_items) if cart_items else 0
-
+    context = {}
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
@@ -104,17 +109,30 @@ def checkout_view(request):
                 notes=form.cleaned_data['notes'],
                 total_price=total_price
             )
+            order.price = total_price*100
+            currency = 'INR'
+            razorpay_order = razorpay_client.order.create(dict(amount=float(order.price),
+                                                               currency=currency,
+                                                               payment_capture='0'))
+            # order id of newly created order.
+            razorpay_order_id = razorpay_order['id']
+            order.razorpay_order_id = razorpay_order_id
             order.save()
+            Cart.objects.filter(user=request.user).delete()
+            callback_url = ' http://127.0.0.1:8000/payment/success'
+            # we need to pass these details to frontend.
+            context = {'razorpay_order_id': razorpay_order_id, 'razorpay_merchant_key': settings.RAZORPAY_KEY_ID,
+                       'razorpay_amount': order.price, 'currency': currency, 'callback_url': callback_url,
+                       "order": order}
             # You can perform any additional logic here, such as creating invoices, processing payments, etc.
             # Redirect to a success page or do other necessary actions.
-
     else:
         form = OrderForm()
 
-    context = {
-        'cart_items': cart_items,
-        'total_price': total_price,
-        'form': form
-    }
+        context = {
+            'cart_items': cart_items,
+            'total_price': total_price,
+            'form': form
+        }
 
     return render(request, 'checkout.html', context)

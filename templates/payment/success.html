@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static "img/breadcrumb.jpg" %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Payment Successful</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container ">
+            <h1>Payment Successful 👍</h1><br>
+            <h3>Thank you for your purchase! Your product will be dispatched asap!📦🚚</h3><br><br>
+            <a href="/"><button class="site-btn" >Continue Shopping</button></a>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+{% endblock %}

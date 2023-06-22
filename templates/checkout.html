@@ -75,7 +75,7 @@
                                     {% endfor %}
                                 </ul>
                                 <div class="checkout__order__total">Total <span>₹{{ total_price }}</span></div>
-                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                                <button type="submit" id="rzp-button1" class="site-btn">PLACE ORDER</button>
                                 <p><em>**You'll be directed to payment page</em></p>
                             </div>
                         </div>
@@ -85,5 +85,34 @@
         </div>
     </section>
     <!-- Checkout Section End -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        const options = {
+        "key": "{{ razorpay_merchant_key }}", // Enter the Key ID generated from the Dashboard
+        "amount": "{{ razorpay_amount }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "BIBLIOBAZAAR",
+        "description": "Test Transaction",
+        "image": "http://localhost:8000/static/img/logo.png",
+        "order_id": "{{ razorpay_order_id }}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "callback_url": "{{ callback_url }}",
+        "prefill": {
+            "name": "{{ order.user.first_name }}",
+            "email": "{{ order.user.email }}",
+            "contact": "+919072124291"
+        },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+    const rzp1 = new Razorpay(options);
+    document.getElementById('rzp-button1').onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+    }
+    </script>
 
 {% endblock %}
