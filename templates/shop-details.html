@@ -42,6 +42,8 @@
                     <div class="product__details__text">
                         <h3>{{ obj.title }}</h3>
                         <div class="product__details__price">₹{{ obj.price }}</div>
+                        <h6>Author: {{ obj.author }}</h6>
+                        <h6>Department: {{ obj.department }}</h6> <br>
                         <p>{{ obj.description }}</p>
                         <form action="{% url 'add_to_cart' obj.id %}" method="POST">
                             {% csrf_token %}

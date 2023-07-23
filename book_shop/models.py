@@ -10,6 +10,7 @@ class BookForSale(models.Model):
     used = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
     price = models.DecimalField(max_digits=8, decimal_places=2)
+    author = models.CharField(max_length=100, default='No author provided')
     description = models.TextField(default='No description provided')
     preview_1 = models.ImageField(upload_to='book_images', null=True, blank=True)
     preview_2 = models.ImageField(upload_to='book_images', null=True, blank=True)

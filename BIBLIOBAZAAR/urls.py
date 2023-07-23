@@ -28,4 +28,5 @@ urlpatterns = [
     path('', include("auth_login.urls")),
     path('', include("resell.urls")),
     path('', include("payment.urls")),
+    path('', include("search.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
