@@ -135,5 +135,5 @@ LOGIN_URL = '/login'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-RAZORPAY_KEY_ID = 'rzp_test_5lyUOahyLoVFIn'
-RAZORPAY_KEY_SECRET = 'hKdc5poLrxjaHuSXnTXHvGyQ'
+RAZORPAY_KEY_ID = 'lsdkf;lyLoVFIn'
+RAZORPAY_KEY_SECRET = 'sadflksjdflks+jlkxjlkjlk'
